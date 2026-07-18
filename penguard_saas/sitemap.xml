@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://penguard.app/</loc><priority>1.0</priority></url>
+  <url><loc>https://penguard.app/grammar-checker</loc><priority>0.9</priority></url>
+  <url><loc>https://penguard.app/spell-checker</loc><priority>0.8</priority></url>
+  <url><loc>https://penguard.app/punctuation-checker</loc><priority>0.8</priority></url>
+  <url><loc>https://penguard.app/passive-voice-checker</loc><priority>0.7</priority></url>
+  <url><loc>https://penguard.app/word-counter</loc><priority>0.7</priority></url>
+  <url><loc>https://penguard.app/character-counter</loc><priority>0.6</priority></url>
+  <url><loc>https://penguard.app/blog</loc><priority>0.8</priority></url>
+  <url><loc>https://penguard.app/blog/common-grammar-mistakes</loc><priority>0.6</priority></url>
+  <url><loc>https://penguard.app/blog/active-vs-passive-voice</loc><priority>0.6</priority></url>
+  <url><loc>https://penguard.app/blog/comma-rules</loc><priority>0.6</priority></url>
+  <url><loc>https://penguard.app/blog/affect-vs-effect</loc><priority>0.6</priority></url>
+  <url><loc>https://penguard.app/blog/its-vs-its</loc><priority>0.6</priority></url>
+  <url><loc>https://penguard.app/blog/their-there-theyre</loc><priority>0.6</priority></url>
+  <url><loc>https://penguard.app/blog/resume-writing</loc><priority>0.6</priority></url>
+  <url><loc>https://penguard.app/blog/business-email-writing</loc><priority>0.6</priority></url>
+  <url><loc>https://penguard.app/blog/improve-academic-writing</loc><priority>0.6</priority></url>
+</urlset>
