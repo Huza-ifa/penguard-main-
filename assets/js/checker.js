@@ -8,6 +8,9 @@
   const downloadBtn = document.getElementById('downloadBtn');
   const langSelect = document.getElementById('langSelect');
   const issuesList = document.getElementById('issuesList');
+  const correctedOutput = document.getElementById('correctedOutput');
+  const correctedStatus = document.getElementById('correctedStatus');
+  const copyCorrectedFast = document.getElementById('copyCorrectedFast');
 
   const statWords = document.getElementById('statWords');
   const statChars = document.getElementById('statChars');
@@ -292,6 +295,15 @@
 
     lastCorrectedText = buildCorrectedText(text, issues);
 
+    // Fast path: fill the corrected-text box immediately, no click required.
+    correctedOutput.value = lastCorrectedText;
+    if (issues.length === 0) {
+      correctedStatus.textContent = 'No changes needed';
+    } else {
+      const fixableCount = issues.filter(i => i.suggestions.length > 0).length;
+      correctedStatus.textContent = `${fixableCount} fix${fixableCount === 1 ? '' : 'es'} applied automatically`;
+    }
+
     if (issues.length === 0) {
       issuesList.innerHTML = `
         <div class="empty-state">
@@ -341,6 +353,8 @@
     issuesList.innerHTML = `<div class="empty-state"><div class="glyph">!</div>${escapeHtml(message)}</div>`;
     scoreNum.textContent = '—';
     scoreBar.style.width = '0%';
+    correctedOutput.value = '';
+    correctedStatus.textContent = 'Waiting for text…';
   }
 
   function escapeHtml(s) {
@@ -367,6 +381,17 @@
       await navigator.clipboard.writeText(lastCorrectedText);
       copyBtn.textContent = 'Copied!';
       setTimeout(() => (copyBtn.textContent = 'Copy corrected'), 1500);
+    } catch {
+      prompt('Copy this text:', lastCorrectedText);
+    }
+  });
+
+  copyCorrectedFast?.addEventListener('click', async () => {
+    if (!lastCorrectedText) return;
+    try {
+      await navigator.clipboard.writeText(lastCorrectedText);
+      copyCorrectedFast.textContent = 'Copied!';
+      setTimeout(() => (copyCorrectedFast.textContent = 'Copy corrected text'), 1500);
     } catch {
       prompt('Copy this text:', lastCorrectedText);
     }

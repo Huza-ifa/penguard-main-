@@ -246,15 +246,34 @@
             <div class="metric-tile"><div class="num" id="metricReadability">—</div><div class="lbl">Readability</div></div>
           </div>
 
-          <div>
-            <div style="font-size:13px;font-weight:600;color:var(--secondary);margin-bottom:10px;">Suggestions</div>
-            <div class="issues-list" id="issuesList">
-              <div class="empty-state">
-                <div class="glyph">✓</div>
-                Enter your text and click <strong>Check text</strong> to see suggestions here.
-              </div>
+          <div class="corrected-box">
+            <div class="corrected-box-head">
+              <span>Corrected text</span>
+              <span id="correctedStatus" class="corrected-status">Waiting for text…</span>
             </div>
+            <textarea id="correctedOutput" class="corrected-textarea" readonly placeholder="Your fixed text will appear here automatically after you click Check text — ready to copy."></textarea>
+            <button class="btn btn-primary btn-block btn-sm" id="copyCorrectedFast">Copy corrected text</button>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="learn-hint">Want to understand each fix instead of just copying? <a href="#learn-corrections">See the breakdown below ↓</a></p>
+  </div>
+</section>
+
+<!-- ============ LEARN FROM CORRECTIONS (secondary, optional) ============ -->
+<section class="section section-alt" id="learn-corrections">
+  <div class="container">
+    <div class="section-head">
+      <h2>Learn from every correction</h2>
+      <p>Click any issue below to see why it was flagged and apply just that one fix to your text — useful when you want to understand your mistakes, not just fix them.</p>
+    </div>
+    <div class="learn-shell">
+      <div class="issues-list" id="issuesList">
+        <div class="empty-state">
+          <div class="glyph">✓</div>
+          Run a check above and each issue will appear here with an explanation.
         </div>
       </div>
     </div>
